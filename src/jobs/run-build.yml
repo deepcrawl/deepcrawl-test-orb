@@ -9,13 +9,11 @@ parameters:
     type: string
     description: "Automation Hub Test Suite ID."
   userKeyId:
-    type: integer
-    description: "Deepcrawl User Key Id."
-    default: $DEEPCRAWL_AUTOMATION_HUB_USER_KEY_ID
+    type: string
+    description: "Deepcrawl User Key ID."
   userKeySecret:
     type: string
     description: "Deepcrawl User Key Secret."
-    default: $DEEPCRAWL_AUTOMATION_HUB_USER_KEY_SECRET
   startOnly:
     type: boolean
     description: "Start the build only, without polling for it to finish."
@@ -31,4 +29,7 @@ steps:
       command: chmod 0755 deepcrawl-test-linux
   - run:
       name: Runs the Automation Hub build
-      command: ./deepcrawl-test-linux --testSuiteId=<< parameters.testSuiteId >> --userKeyId=<< parameters.userKeyId >> --userKeySecret=<< parameters.userKeySecet >> --startOnly=<< parameters.startOnly >> --ciBuildId=$CIRCLE_BUILD_NUM
+      command: ./deepcrawl-test-linux --testSuiteId=<< parameters.testSuiteId >> --startOnly=<< parameters.startOnly >> --ciBuildId=$CIRCLE_BUILD_NUM
+      environment:
+        DEEPCRAWL_TEST_USER_KEY_ID: << parameters.userKeyId >>
+        DEEPCRAWL_TEST_USER_KEY_SECRET: << parameters.userKeySecret >>

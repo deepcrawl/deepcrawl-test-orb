@@ -1,4 +1,4 @@
 description: |
-  Default executor for running the deepcrawl/test jobs.
+  Default executor for running the deepcrawl/deepcrawl-test jobs.
 docker:
   - image: cimg/base:stable

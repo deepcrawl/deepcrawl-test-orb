@@ -3,11 +3,11 @@ description: >
 usage:
   version: 2.1
   orbs:
-    deepcrawl: deepcrawl/test@1.0.0
+    deepcrawl-test: deepcrawl/deepcrawl-test@1.0.0
   workflows:
     use-my-orb:
       jobs:
-        - deepcrawl/test:
+        - deepcrawl-test/test:
             testSuiteId: "TEST_SUITE_ID"
             userKeyId: 123
             userKeySecret: "USER_KEY_SECRET"
