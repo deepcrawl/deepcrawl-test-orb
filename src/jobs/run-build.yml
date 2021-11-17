@@ -8,6 +8,12 @@ parameters:
   testSuiteId:
     type: string
     description: "Automation Hub Test Suite ID."
+  userKeyId:
+    type: string
+    description: "Deepcrawl User Key ID."
+  userKeySecret:
+    type: string
+    description: "Deepcrawl User Key Secret."
   startOnly:
     type: boolean
     description: "Start the build only, without polling for it to finish."
