@@ -49,8 +49,6 @@ workflows:
       - deepcrawl-test/run-build:
           context: orb-publishing
           testSuiteId: "TjAwOVRlc3RTdWl0ZTM3NjI2Ng"
-          userKeyId: ${DEEPCRAWL_TEST_INTEGRATION_USER_KEY_ID}
-          userKeySecret: ${DEEPCRAWL_TEST_INTEGRATION_USER_KEY_SECRET}
       # Publish a semver version of the orb. relies on
       # the commit subject containing the text "[semver:patch|minor|major|skip]"
       # as that will determine whether a patch, minor or major
