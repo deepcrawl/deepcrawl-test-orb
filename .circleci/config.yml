@@ -46,7 +46,7 @@ workflows:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
       # Run any integration tests defined within the `jobs` key.
-      - deepcrawl-test/test:
+      - deepcrawl-test/run-build:
           testSuiteId: "TEST-SUITE-ID"
       # Publish a semver version of the orb. relies on
       # the commit subject containing the text "[semver:patch|minor|major|skip]"
