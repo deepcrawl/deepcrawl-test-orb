@@ -1,13 +1,14 @@
 description: >
-  Sample example description.
-# Provide a use-case based example for using this orb.
-# Everything in the `usage` section will be displayed in the orb registry.
-# Comments are not retained.
+  Example for running an Automation Hub Build
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    deepcrawl: deepcrawl/test@1.0.0
   workflows:
     use-my-orb:
       jobs:
-        - <orb-name>/<job-name>
+        - deepcrawl/test:
+            testSuiteId: "TEST_SUITE_ID"
+            userKeyId: 123
+            userKeySecret: "USER_KEY_SECRET"
+            startOnly: false

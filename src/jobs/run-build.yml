@@ -1,0 +1,34 @@
+description: >
+  Runs a build on Automation Hub.
+
+executor:
+  name: default
+
+parameters:
+  testSuiteId:
+    type: string
+    description: "Automation Hub Test Suite ID."
+  userKeyId:
+    type: integer
+    description: "Deepcrawl User Key Id."
+    default: $DEEPCRAWL_AUTOMATION_HUB_USER_KEY_ID
+  userKeySecret:
+    type: string
+    description: "Deepcrawl User Key Secret."
+    default: $DEEPCRAWL_AUTOMATION_HUB_USER_KEY_SECRET
+  startOnly:
+    type: boolean
+    description: "Start the build only, without polling for it to finish."
+    default: false
+environment:
+  CLI_VERSION: 1.1.2
+steps:
+  - run:
+      name: Downloads the CLI Executable
+      command: curl -L https://github.com/deepcrawl/deepcrawl-test/releases/download/v$CLI_VERSION/deepcrawl-test-linux --output deepcrawl-test-linux
+  - run:
+      name: Set permissions on CLI Executable
+      command: chmod 0755 deepcrawl-test-linux
+  - run:
+      name: Runs the Automation Hub build
+      command: ./deepcrawl-test-linux --testSuiteId=<< parameters.testSuiteId >> --userKeyId=<< parameters.userKeyId >> --userKeySecret=<< parameters.userKeySecet >> --startOnly=<< parameters.startOnly >> --ciBuildId=$CIRCLE_BUILD_NUM
