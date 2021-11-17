@@ -8,12 +8,6 @@ parameters:
   testSuiteId:
     type: string
     description: "Automation Hub Test Suite ID."
-  userKeyId:
-    type: string
-    description: "Deepcrawl User Key ID."
-  userKeySecret:
-    type: string
-    description: "Deepcrawl User Key Secret."
   startOnly:
     type: boolean
     description: "Start the build only, without polling for it to finish."
@@ -30,6 +24,3 @@ steps:
   - run:
       name: Runs the Automation Hub build
       command: ./deepcrawl-test-linux --testSuiteId=<< parameters.testSuiteId >> --startOnly=<< parameters.startOnly >> --ciBuildId=$CIRCLE_BUILD_NUM
-      environment:
-        DEEPCRAWL_TEST_USER_KEY_ID: << parameters.userKeyId >>
-        DEEPCRAWL_TEST_USER_KEY_SECRET: << parameters.userKeySecret >>
