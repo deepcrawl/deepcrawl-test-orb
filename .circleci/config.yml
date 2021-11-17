@@ -42,27 +42,27 @@ workflows:
           requires:
             - orb-tools/publish-dev
 
-integration-test_deploy:
-  when: << pipeline.parameters.run-integration-tests >>
-  jobs:
-    # Run any integration tests defined within the `jobs` key.
-    - deepcrawl-test/test:
-        testSuiteId: "TEST-SUITE-ID"
-    # Publish a semver version of the orb. relies on
-    # the commit subject containing the text "[semver:patch|minor|major|skip]"
-    # as that will determine whether a patch, minor or major
-    # version will be published or if publishing should
-    # be skipped.
-    # e.g. [semver:patch] will cause a patch version to be published.
-    - orb-tools/dev-promote-prod-from-commit-subject:
-        deepcrawl-test: deepcrawl/deepcrawl-test
-        context: orb-publishing
-        add-pr-comment: false
-        fail-if-semver-not-indicated: true
-        publish-version-tag: false
-        requires:
-          - deepcrawl-test/test
-        filters:
-          branches:
-            only:
-              - main
+  integration-test_deploy:
+    when: << pipeline.parameters.run-integration-tests >>
+    jobs:
+      # Run any integration tests defined within the `jobs` key.
+      - deepcrawl-test/test:
+          testSuiteId: "TEST-SUITE-ID"
+      # Publish a semver version of the orb. relies on
+      # the commit subject containing the text "[semver:patch|minor|major|skip]"
+      # as that will determine whether a patch, minor or major
+      # version will be published or if publishing should
+      # be skipped.
+      # e.g. [semver:patch] will cause a patch version to be published.
+      - orb-tools/dev-promote-prod-from-commit-subject:
+          deepcrawl-test: deepcrawl/deepcrawl-test
+          context: orb-publishing
+          add-pr-comment: false
+          fail-if-semver-not-indicated: true
+          publish-version-tag: false
+          requires:
+            - deepcrawl-test/test
+          filters:
+            branches:
+              only:
+                - main
