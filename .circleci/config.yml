@@ -61,7 +61,7 @@ workflows:
           fail-if-semver-not-indicated: true
           publish-version-tag: false
           requires:
-            - deepcrawl-test/test
+            - deepcrawl-test/run-build
           filters:
             branches:
               only:
