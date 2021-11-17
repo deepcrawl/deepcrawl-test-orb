@@ -9,6 +9,4 @@ usage:
       jobs:
         - deepcrawl-test/test:
             testSuiteId: "TEST_SUITE_ID"
-            userKeyId: 123
-            userKeySecret: "USER_KEY_SECRET"
             startOnly: false
