@@ -7,6 +7,6 @@ usage:
   workflows:
     use-my-orb:
       jobs:
-        - deepcrawl-test/test:
+        - deepcrawl-test/run-build:
             testSuiteId: "TEST_SUITE_ID"
             startOnly: false
