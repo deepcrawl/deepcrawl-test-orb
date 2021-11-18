@@ -1,6 +1,6 @@
 # Releasing Automation Hub CircleCI Orb
 
-1. Prepare a release PR with the following title **ci: release v{version} [semver:patch/minor/major]** which will contain the changelog information
+1. Prepare a release PR with the following title **ci(release): v{version} [semver:patch/minor/major]** which will contain the changelog information, by copying over the changelog from _Unreleased_ section.
 
 - **[semver:patch]** will increase the patch version (1.0.0 => 1.0.1)
 - **[semver:minor]** will increase the minor version (1.0.0 => 1.1.0)
@@ -9,3 +9,4 @@
 2. Squash and merge the PR
 
 _Note: If you want to skip releasing a squashed commit, don't include **[semver:patch/minor/major]** in the commit description_
+_Note: Make sure to include the changelog in the unreleased section even if you don't release the change_
