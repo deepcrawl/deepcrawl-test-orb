@@ -34,3 +34,5 @@ workflows:
 ```
 
 _Note: Make sure to run this job after your website is deployed, by using `requires` property of the job._
+
+**For other ways to trigger an Automation Hub Build please see: https://github.com/deepcrawl/deepcrawl-test**
