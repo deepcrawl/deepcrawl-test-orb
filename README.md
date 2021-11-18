@@ -1,6 +1,6 @@
 # Automation Hub CircleCI Orb
 
-[![CircleCI Build Status](https://circleci.com/gh/deepcrawl/deepcrawl-test.svg?style=shield)](https://circleci.com/gh/deepcrawl/deepcrawl-test) [![CircleCI Orb Version](https://badges.circleci.com/orbs/deepcrawl/deepcrawl-test.svg)](https://circleci.com/orbs/registry/orb/deepcrawl/deepcrawl-test) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/deepcrawl/deepcrawl-test/main/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[![CircleCI Orb Version](https://badges.circleci.com/orbs/deepcrawl/deepcrawl-test.svg)](https://circleci.com/orbs/registry/orb/deepcrawl/deepcrawl-test) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/deepcrawl/deepcrawl-test/main/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 `deepcrawl/deepcrawl-test` is exposing the `run-build` job which will run a build on Automation Hub.
 
