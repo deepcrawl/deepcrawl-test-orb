@@ -3,10 +3,15 @@ description: >
 usage:
   version: 2.1
   orbs:
-    deepcrawl-test: deepcrawl/deepcrawl-test@1.0.0
+    deepcrawl-test: deepcrawl/deepcrawl-test@1.0.1
   workflows:
-    use-my-orb:
+    deploy:
       jobs:
         - deepcrawl-test/run-build:
-            testSuiteId: "TEST_SUITE_ID"
+            # Create `depcrawl-test` context with `DEEPCRAWL_TEST_USER_KEY_ID` / `DEEPCRAWL_TEST_USER_KEY_SECRET`
+            # which can be created at https://app.deepcrawl.com/dc-api
+            context: deepcrawl-test
+            # Test suite ID created in Automation Hub
+            testSuiteId: "YOUR_TEST_SUITE_ID"
+            # Can be used to make it non-blocking
             startOnly: false
