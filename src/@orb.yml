@@ -4,5 +4,5 @@ description: >
   Automation Hub Orb used for running a build.
 
 display:
-  home_url: "https://automator.deepcrawl.com/"
+  home_url: "https://automate.deepcrawl.com/"
   source_url: "https://github.com/deepcrawl/deepcrawl-test-orb"
