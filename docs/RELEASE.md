@@ -10,3 +10,15 @@
 
 _Note: If you want to skip releasing a squashed commit, don't include **[semver:patch/minor/major]** in the commit description_
 _Note: Make sure to include the changelog in the unreleased section even if you don't release the change_
+
+# Troubleshooting
+
+When 90 days pass without any releases happening, the following error will occur:
+
+> The dev version of deepcrawl/deepcrawl-test@dev:alpha has expired. Dev versions of orbs are only valid for 90 days after publishing.
+
+To solve this issue, `dev:alpha` version needs to be released manually, using the CLI:
+
+```shell
+circleci orb pack ./src/ | circleci orb publish - deepcrawl/deepcrawl-test@dev:alpha
+```
