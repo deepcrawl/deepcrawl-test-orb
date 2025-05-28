@@ -4,6 +4,10 @@
 
 - No changes
 
+## [1.0.4] - 2025-05-28
+
+- [chore(deps): Bump CLI from v1.1.3 to v1.1.4](https://github.com/deepcrawl/deepcrawl-test-orb/pull/13)
+
 ## [1.0.3] - 2022-06-07
 
 - [chore(cli): bump CLI from v1.1.1 to v1.1.3](https://github.com/deepcrawl/deepcrawl-test-orb/pull/10)
